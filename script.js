@@ -73,6 +73,10 @@ function cambiarEvento(evento){
 
   document.getElementById("body").style.backgroundImage =
 `url(${data.fondo})`
+if(evento === "final"){
+    document.body.style.backgroundImage = "url('img/world-cup.jpg')"
+    document.body.style.backgroundPosition = "center 40%"
+  }
 
 }
 
