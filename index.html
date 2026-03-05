@@ -11,6 +11,11 @@
 
 <body id="body">
 
+    <div class="idioma">
+        <button onclick="cambiarIdioma('es')">ES</button>
+        <button onclick="cambiarIdioma('en')">EN</button>
+      </div>
+
 <div class="menu">
   <button onclick="cambiarEvento('inicio')">Inicio Mundial</button>
   <button onclick="cambiarEvento('final')">Partido Final</button>
@@ -18,8 +23,10 @@
 </div>
 
 <div class="contador">
-  <h1 id="titulo">Inicio del Mundial</h1>
-  <div id="tiempo">00d 00h 00m 00s</div>
+    <h1 id="titulo">Inicio del Mundial</h1>
+    <p id="fecha">11 de junio de 2026</p>
+    <p id="lugar">📍 Estadio Azteca, Ciudad de México, México</p>
+    <div id="tiempo">00d 00h 00m 00s</div>
 </div>
 
 <script src="script.js"></script>

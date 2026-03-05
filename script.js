@@ -1,26 +1,60 @@
-let fechaObjetivo = new Date("2026-06-11T00:00:00")
+let fechaObjetivo
+let eventoActual = "inicio"
+let idioma = "es"
 
-function cambiarEvento(evento){
 
-  if(evento === "inicio"){
-    fechaObjetivo = new Date("2026-06-11T00:00:00")
-    document.getElementById("titulo").innerText = "Inicio del Mundial"
-    document.body.style.backgroundImage = "url('inicio.jpg')"
-  }
+const textos = {
 
-  if(evento === "final"){
-    fechaObjetivo = new Date("2026-07-19T00:00:00")
-    document.getElementById("titulo").innerText = "Final del Mundial"
-    document.body.style.backgroundImage = "url('final.jpg')"
-  }
+  inicio: {
+    fechaObjetivo: "2026-06-11T00:00:00",
+    es: {
+      titulo: "Inicio del Mundial",
+      fecha: "11 de junio de 2026",
+      lugar: "📍 Estadio Azteca, Ciudad de México, México"
+    },
+    en: {
+      titulo: "World Cup Opening Match",
+      fecha: "June 11, 2026",
+      lugar: "📍 Estadio Azteca, Mexico City, Mexico"
+    }
+  },
 
-  if(evento === "argentina"){
-    fechaObjetivo = new Date("2026-06-12T00:00:00")
-    document.getElementById("titulo").innerText = "Primer partido Argentina"
-    document.body.style.backgroundImage = "url('argentina.jpg')"
+  final: {
+    fechaObjetivo: "2026-07-19T00:00:00",
+    es: {
+      titulo: "Final del Mundial",
+      fecha: "19 de julio de 2026",
+      lugar: "📍 MetLife Stadium, Nueva York, Estados Unidos"
+    },
+    en: {
+      titulo: "World Cup Final",
+      fecha: "July 19, 2026",
+      lugar: "📍 MetLife Stadium, New York, United States"
+    }
   }
 
 }
+
+
+function cambiarEvento(evento){
+
+  eventoActual = evento
+
+  const data = textos[evento]
+
+  fechaObjetivo = new Date(data.fechaObjetivo)
+
+  document.getElementById("titulo").innerText =
+  data[idioma].titulo
+
+  document.getElementById("fecha").innerText =
+  data[idioma].fecha
+
+  document.getElementById("lugar").innerText =
+  data[idioma].lugar
+
+}
+
 
 function actualizarContador(){
 
@@ -38,3 +72,12 @@ function actualizarContador(){
 }
 
 setInterval(actualizarContador,1000)
+
+
+function cambiarIdioma(nuevoIdioma){
+  idioma = nuevoIdioma
+  cambiarEvento(eventoActual)
+}
+
+
+cambiarEvento("inicio")
