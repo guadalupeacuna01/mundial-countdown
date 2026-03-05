@@ -1,14 +1,23 @@
 body{
     margin:0;
+    margin-top: 50px;
     font-family:Arial, Helvetica, sans-serif;
-    height:50vh;
+    height: 55vh;
     display:flex;
     flex-direction:column;
     justify-content:space-between;
     align-items:center;
     color:white;
-    background-size:cover;
+    background-size:cover 100%;
     background-position:center;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
   }
   
   .menu{
@@ -24,28 +33,41 @@ body{
     cursor:pointer;
     font-size:16px;
   }
+
+  button:hover {
+    background-color: rgb(224, 222, 222);
+    color: black;
+  } 
   
+.argentina-btn:hover {
+    background-color: #0ca8eb;
+    color: white;
+  }
+
   .contador{
     text-align:center;
-    color: black;
+    color: white;
   }
 
   #fecha{
     font-size:18px;
-    margin:5px 0;
+    /* margin:5px 0; */
+    color:white
     }
 
     #lugar{
         font-size:16px;
         opacity:0.9;
-        margin-bottom:20px;
+        /* margin-bottom:20px; */
+        color: white;
         }
   
   #tiempo{
     font-size:60px;
-    margin-top:10px;
+    /* margin-top:10px; */
     letter-spacing:3px;
     font-weight:bold;
+    color: white;
   }
 
 body{
@@ -58,7 +80,10 @@ body{
     right: 20px;
     display: flex;
     gap: 10px;
-    background-color: white;
+  }
+
+.en, .es {
     border: 1px solid #000000;
     border-radius: 5px;
-  }
+    font-size: 10px;
+}

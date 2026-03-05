@@ -7,6 +7,7 @@ const textos = {
 
   inicio: {
     fechaObjetivo: "2026-06-11T00:00:00",
+    fondo: "img/first-match.jpg",
     es: {
       titulo: "Inicio del Mundial",
       fecha: "11 de junio de 2026",
@@ -21,6 +22,7 @@ const textos = {
 
   final: {
     fechaObjetivo: "2026-07-19T00:00:00",
+    fondo: "img/world-cup.jpg",
     es: {
       titulo: "Final del Mundial",
       fecha: "19 de julio de 2026",
@@ -30,6 +32,22 @@ const textos = {
       titulo: "World Cup Final",
       fecha: "July 19, 2026",
       lugar: "📍 MetLife Stadium, New York, United States"
+    }
+    
+    
+  },
+  argentina: {
+    fechaObjetivo: "2026-06-12T00:00:00",
+    fondo: "img/arg-flag.jpg", 
+    es: {
+      titulo: "Primer partido de Argentina",
+      fecha: "12 de junio de 2026 (estimado)",
+      lugar: "📍 Sede por confirmar"
+    },
+    en: {
+      titulo: "Argentina First Match",
+      fecha: "June 12, 2026 (estimated)",
+      lugar: "📍 Venue TBD"
     }
   }
 
@@ -52,6 +70,9 @@ function cambiarEvento(evento){
 
   document.getElementById("lugar").innerText =
   data[idioma].lugar
+
+  document.getElementById("body").style.backgroundImage =
+`url(${data.fondo})`
 
 }
 
