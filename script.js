@@ -7,7 +7,6 @@ const textos = {
 
   inicio: {
     fechaObjetivo: "2026-06-11T00:00:00",
-    fondo: "img/first-match.jpg",
     es: {
       titulo: "Inicio del Mundial",
       fecha: "11 de junio de 2026",
@@ -22,7 +21,6 @@ const textos = {
 
   final: {
     fechaObjetivo: "2026-07-19T00:00:00",
-    fondo: "img/world-cup.jpg",
     es: {
       titulo: "Final del Mundial",
       fecha: "19 de julio de 2026",
@@ -38,7 +36,6 @@ const textos = {
   },
   argentina: {
     fechaObjetivo: "2026-06-12T00:00:00",
-    fondo: "img/arg-flag.jpg", 
     es: {
       titulo: "Primer partido de Argentina",
       fecha: "12 de junio de 2026 (estimado)",
@@ -71,11 +68,20 @@ function cambiarEvento(evento){
   document.getElementById("lugar").innerText =
   data[idioma].lugar
 
-  document.getElementById("body").style.backgroundImage =
-`url(${data.fondo})`
-if(evento === "final"){
-    document.body.style.backgroundImage = "url('img/world-cup.jpg')"
-    document.body.style.backgroundPosition = "center 40%"
+  if(evento === "argentina"){
+    document.body.style.backgroundImage = 
+    "repeating-linear-gradient(180deg, #75AADB 0px, #75AADB 60px, white 60px, white 120px"
+  
+    document.body.style.backgroundSize = "cover"
+  }
+
+  if(evento === "final"){
+    document.body.style.backgroundImage = `
+radial-gradient(circle,rgb(247, 231, 5) 2px, transparent 2px)
+`
+
+document.body.style.backgroundColor = "#f4c430"
+document.body.style.backgroundSize = "40px 40px"
   }
 
 }

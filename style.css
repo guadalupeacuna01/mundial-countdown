@@ -16,7 +16,7 @@ body{
     content: "";
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0,0,0,0.2);
     z-index: -1;
   }
   
@@ -24,11 +24,6 @@ body{
     display:flex;
     gap:20px;
     margin-top:40px;
-  }
-
-  .menu .cup {
-    background-position: center 70%;
-    background-size: cover;
   }
   
   button{
