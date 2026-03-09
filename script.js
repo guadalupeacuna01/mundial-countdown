@@ -70,7 +70,7 @@ function cambiarEvento(evento){
 
   if(evento === "argentina"){
     document.body.style.backgroundImage = 
-    "repeating-linear-gradient(180deg, #75AADB 0px, #75AADB 60px, white 60px, white 120px"
+    "repeating-linear-gradient(180deg, #75AADB 0px, #75AADB 7px, white 7px, white 15px"
   
     document.body.style.backgroundSize = "cover"
   }
